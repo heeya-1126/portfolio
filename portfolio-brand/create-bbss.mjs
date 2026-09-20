@@ -2,7 +2,7 @@ import { writeFile, mkdir } from 'node:fs/promises';
 const root = new URL('./', import.meta.url);
 const target = new URL('dist/projects/bbss/', root);
 await mkdir(target, { recursive: true });
-const sections = [['overview','Overview'],['work','What I Worked On'],['context','Project Context'],['main-case','Main Case'],['process','How I Worked'],['impact','Impact'],['takeaway','Takeaway']];
+const sections = [['overview','Overview'],['work','What I Worked On'],['context','Project Context'],['main-case','Main Case'],['impact','Impact'],['takeaway','Takeaway']];
 const label = (n,t) => `<div class="eyebrow"><span>${String(n).padStart(2,'0')}</span> / ${t.toUpperCase()}</div>`;
 const section = (n,body) => `<section id="${sections[n-1][0]}" class="detail-section observed">${label(n,sections[n-1][1])}${body}</section>`;
 const flow = (items, cls='') => `<ol class="bbss-flow ${cls}">${items.map((t,i)=>`<li><span>${String(i+1).padStart(2,'0')}</span><strong>${t}</strong></li>`).join('')}</ol>`;
@@ -31,15 +31,14 @@ ${step('DECISION','기능을 추가하기 전에 모호했던 기준부터 정�
 ${step('ACTION','업무 기준을 데이터와 기능으로 연결했습니다.',`<p>계약별 출고 기기 시리얼을 연결하고 검교정·USIM 만료일로 교체 대상을 확인하도록 했습니다.<br>기기 목록과 출고·회수 상태, 거래처, 검교정 정보, 출고일과 회수일을 조회하는 프로토타입을 만들었습니다.</p><p>재무팀의 요구도 확인해 계약번호, 서비스 유형, 판매·렌탈 구분과 매출 귀속 정보까지 연결했습니다.<br>반복 자료는 시스템이 만들고, 외부로 나가는 메일은 담당자가 확인·발송하도록 구성했습니다.</p><div class="bbss-human-flow" aria-label="안내 메일 처리 흐름"><span>시스템 생성</span><span aria-hidden="true">→</span><span>담당자 확인</span><span aria-hidden="true">→</span><strong>직접 발송</strong></div>`)}
 ${step('RESULT','연결 구조를 확인하고 실운영을 위한 전환을 시작했습니다.',`<p>계약, 기기, 교체·회수 상태와 이력을 연결해 관리할 수 있는 기본 구조를 만들었습니다. 다만 일회용 기기를 포함한 <strong>10만 대 이상의 실데이터</strong>를 적용하면서 스프레드시트 구조의 성능·확장성 한계를 확인했습니다.</p><p>장기적인 운영을 위해 현재 Supabase에 별도 데이터 테이블을 구성하고, 기존 데이터를 Raw Data로 활용할 수 있도록 마이그레이션하고 있습니다.</p><p class="bbss-note">실제 운영 적용을 준비하는 단계로, 회수율과 업무시간 개선 효과는 도입 이후 검증할 예정입니다.</p>`)}
 </div>`)}
-${section(5,`<h2>업무를 이해하고, 구현하고,<br>실제 데이터로 다시 검증했습니다.</h2>${flow(['업무 흐름 파악','문제·예외 정리','운영 기준 정의','요구사항 구체화','프로토타입 구현','실데이터 적용','한계 확인','데이터 구조 전환'],'bbss-process')}<div class="bbss-prose"><p>Claude Code는 아이디어를 빠르게 구현하고 수정하는 데 활용했습니다. <strong>무엇을 구현할지, 어떤 데이터를 연결할지, 어느 단계에서 사람이 판단해야 하는지</strong>는 실제 업무를 기준으로 정했습니다.</p><p>구현한 기능을 실제 데이터와 업무 흐름에 적용하고, 확인한 한계를 다음 설계에 반영하는 과정을 반복했습니다.</p></div>`)}
-${section(6,`<ol class="bbss-impact">${[
+${section(5,`<ol class="bbss-impact">${[
  ['AI HACKATHON','사내 AI 해커톤 1위','운영 데이터 통합 아이디어를 실제 업무 문제를 해결하는 프로젝트로 발전시켰습니다.'],
  ['DATA CONNECTION','계약 ↔ 기기 ↔ 교체·회수 이력','계약을 기준으로 기기 시리얼과 상태, 이력을 연결하는 기본 구조를 구현했습니다.'],
  ['OPERATING RULE','교체·회수 처리 기준 정의','교체 시점, 회수 기한, 미회수 상태 등 업무에 필요한 판단 기준을 정리했습니다.'],
  ['SCALE TEST','10만+ 기기 데이터 검증','실데이터 적용으로 스프레드시트 구조의 성능·확장성 한계를 확인했습니다.'],
  ['MIGRATION · IN PROGRESS','Supabase 기반 데이터 전환','실운영 적용을 위해 데이터 테이블 재구성과 기존 데이터 마이그레이션을 진행 중입니다.']
  ].map(([en,t,p],i)=>`<li><span class="item-number">0${i+1}</span><div><p class="category">${en}</p><h2>${t}</h2><p>${p}</p></div></li>`).join('')}</ol><p class="bbss-note">회수율·업무시간 등 운영 성과는 실제 도입 이후 별도로 검증할 예정입니다.</p>`)}
-${section(7,`<div class="bbss-prose"><p>기능을 만들기 전에 먼저 실제 업무에서 어떤 판단이 필요한지 정리했습니다. 담당자가 무엇을 확인해야 다음 단계로 넘어갈 수 있는지도 함께 봤습니다.</p><p>프로토타입이 잘 작동해도 실제 데이터를 넣으면 예상하지 못한 문제가 생겼습니다. 그래서 한 번에 완성하려 하기보다 실제 데이터를 적용해 보고, 문제가 생기는 부분을 다시 수정하는 방식으로 진행했습니다.</p><p>정보는 단순히 관리하는것이 중요한 것이 아니라 실제 사용할 수 있도록 연결하여 관리하는것이 중요하다는 것을 깨달았습니다.</p><p>현재는 관리되지 않던 계약과 디바이스 흐름을 기준부터 다시 정리하고 있습니다. 프로토타입과 실데이터 검증을 거치면서 실제 운영에 사용할 수 있는 형태로 계속 보완하고 있습니다.</p></div>`)}
+${section(6,`<div class="bbss-prose"><p>기능을 만들기 전에 먼저 실제 업무에서 어떤 판단이 필요한지 정리했습니다. 담당자가 무엇을 확인해야 다음 단계로 넘어갈 수 있는지도 함께 봤습니다.</p><p>프로토타입이 잘 작동해도 실제 데이터를 넣으면 예상하지 못한 문제가 생겼습니다. 그래서 한 번에 완성하려 하기보다 실제 데이터를 적용해 보고, 문제가 생기는 부분을 다시 수정하는 방식으로 진행했습니다.</p><p>정보는 단순히 관리하는것이 중요한 것이 아니라 실제 사용할 수 있도록 연결하여 관리하는것이 중요하다는 것을 깨달았습니다.</p><p>현재는 관리되지 않던 계약과 디바이스 흐름을 기준부터 다시 정리하고 있습니다. 프로토타입과 실데이터 검증을 거치면서 실제 운영에 사용할 수 있는 형태로 계속 보완하고 있습니다.</p></div>`)}
 <div class="reading-next"><a class="project-link" href="/#featured-project">프로젝트 목록 <span aria-hidden="true">↗</span></a><a class="project-link" href="/projects/cosmetics-product-launch">화장품 프로젝트 보기 <span aria-hidden="true">→</span></a></div><footer><a href="/">SEONG HEE</a><a class="footer-email" href="mailto:9dudn@naver.com">9dudn@naver.com</a><span>© 2026</span></footer></main></body></html>`;
 await writeFile(new URL('index.html', target), page);
 console.log('Generated standalone /projects/bbss/ only.');
