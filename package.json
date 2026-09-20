@@ -6,12 +6,13 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "vinext dev",
-    "build": "vinext build",
-    "start": "wrangler dev --config dist/server/wrangler.json",
+    "dev": "node --run preview",
+    "build": "node scripts/build-static.mjs",
+    "start": "wrangler dev --config wrangler.jsonc",
     "lint": "oxlint",
     "format": "oxfmt",
-    "deploy": "wrangler deploy --config dist/server/wrangler.json"
+    "deploy": "wrangler deploy --config wrangler.jsonc",
+    "preview": "cd portfolio-brand && node preview.mjs"
   },
   "dependencies": {
     "react": "19.2.6",
