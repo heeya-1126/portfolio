@@ -1,0 +1,17 @@
+.bbss-page #work .bbss-work-grid{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:28px}
+.bbss-page #work .bbss-carousel{margin-top:0;border-top:1px solid var(--line);padding-top:32px}
+.bbss-page #work .bbss-carousel-stage{position:relative;padding:0 48px}
+.bbss-page #work .bbss-slide{margin:0}
+.bbss-page #work .bbss-slide[hidden]{display:none}
+.bbss-page #work .bbss-screen{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;touch-action:pan-y pinch-zoom;user-select:none}
+.bbss-page #work .bbss-screen img{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;-webkit-user-drag:none}
+.bbss-page #work .bbss-slide figcaption{margin:0 -48px 28px;min-width:0}
+.bbss-page #work .bbss-slide-count{font-size:.8125rem;letter-spacing:.06em;color:var(--secondary);margin-bottom:12px;font-variant-numeric:tabular-nums}
+.bbss-page #work .bbss-slide h3{font-size:1.125rem;line-height:1.6;margin-bottom:10px}
+.bbss-page #work .bbss-slide figcaption>p:last-child{font-size:1rem;line-height:1.75;max-width:none}
+.bbss-page #work .bbss-single-line{white-space:nowrap;overflow-x:auto;padding-bottom:4px}
+.bbss-page #work .bbss-carousel button{position:absolute;top:var(--bbss-arrow-top,70%);transform:translateY(-50%);width:44px;height:44px;padding:0;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:1.4rem;display:flex;align-items:center;justify-content:center;z-index:1}
+.bbss-page #work .bbss-carousel-prev{left:0}.bbss-page #work .bbss-carousel-next{right:0}
+.bbss-page #work .bbss-carousel button:hover,.bbss-page #work .bbss-carousel button:focus-visible{color:var(--accent);border-color:var(--accent)}
+@media(max-width:1100px){.bbss-page #work .bbss-work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){.bbss-page #work .bbss-work-grid{grid-template-columns:1fr}.bbss-page #work .bbss-carousel-stage{padding:0}.bbss-page #work .bbss-carousel button{top:auto;bottom:0;transform:none}.bbss-page #work .bbss-carousel-stage{padding-bottom:64px}.bbss-page #work .bbss-slide figcaption{margin:0 0 24px}.bbss-page #work .bbss-carousel-prev{left:auto;right:56px}.bbss-page #work .bbss-carousel-next{right:0}}

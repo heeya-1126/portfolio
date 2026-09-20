@@ -1,0 +1,39 @@
+/* Operations case: shared typography, linear evidence and process diagrams. */
+.bbss-preview{border-top:1px solid var(--line);margin-top:64px;padding-top:56px}
+.bbss-preview-layout{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:start}
+.bbss-preview-role{font-size:.875rem;margin-top:24px}
+.bbss-preview-summary>div{padding:20px 0;border-top:1px solid var(--line)}
+.bbss-preview-summary span{display:block;color:var(--secondary);font-size:.75rem;letter-spacing:.06em;margin-bottom:12px}
+.bbss-preview-summary strong{font-size:1rem;line-height:1.7;font-weight:500;word-break:keep-all}
+.bbss-page .detail-hero{padding-top:52px}.bbss-page .detail-hero h1{font-size:clamp(2.1rem,3.6vw,3.5rem)}
+.bbss-name{white-space:nowrap}.bbss-lead strong,.bbss-prose strong,.bbss-case strong{color:var(--ink);font-weight:600}
+.bbss-status{display:flex;gap:20px;border-top:1px solid var(--line);padding-top:20px;margin-top:32px;font-size:.875rem}
+.bbss-status>span{color:var(--accent);white-space:nowrap}
+.bbss-work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px}
+.bbss-work-grid article{border-top:1px solid var(--line);padding:24px 0 36px}
+.bbss-work-grid h2{font-size:1.25rem;margin:17px 0 14px}
+.bbss-prose{max-width:780px;margin-top:28px}.bbss-prose p+p{margin-top:20px}
+.bbss-case{margin-top:36px}.bbss-case-step{display:grid;grid-template-columns:120px minmax(0,1fr);gap:28px;border-top:1px solid var(--line);padding:32px 0}
+.bbss-step-label{font-size:.8125rem;letter-spacing:.06em;padding-top:5px;color:var(--ink)}
+.bbss-case-step h3{font-size:1.25rem;line-height:1.6;margin-bottom:17px;letter-spacing:-.025em}
+.bbss-case-step p+p{margin-top:18px}
+.bbss-page #main-case .bbss-decision-rules{list-style:none;margin:28px 0 0;padding:0}
+.bbss-page #main-case .bbss-decision-rules li{border-top:1px solid var(--line);padding:20px 0}
+.bbss-page #main-case .bbss-decision-rules h4{font-size:1rem;font-weight:600;line-height:1.7;margin:0 0 8px}
+.bbss-flow{list-style:none;padding:0;margin:32px 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 20px;counter-reset:flow}
+.bbss-flow li{border-top:1px solid var(--line);padding:16px 0 22px;position:relative}
+.bbss-flow li>span{display:block;font-size:.75rem;color:var(--accent);margin-bottom:12px}
+.bbss-flow strong{font-size:.9375rem;font-weight:500;line-height:1.6;word-break:keep-all}
+.bbss-rule{padding:24px;background:var(--soft);margin-top:12px}
+.bbss-rule-label{font-size:.875rem;font-weight:600}.bbss-rule>div{display:flex;flex-wrap:wrap;gap:12px 24px;margin:20px 0 16px}
+.bbss-rule>div span{font-size:.9375rem;border-bottom:1px solid var(--line);padding-bottom:8px}
+.bbss-rule p{font-size:.9375rem}.bbss-rule p strong{color:var(--accent)}
+.bbss-human-flow{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;font-size:.875rem;line-height:1.8}
+.bbss-note{font-size:.875rem;border-left:2px solid var(--line);padding-left:16px;margin-top:24px}
+.bbss-process{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:36px}
+.bbss-impact{list-style:none;margin:0;padding:0}.bbss-impact li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px;padding:28px 0;border-top:1px solid var(--line)}
+.bbss-impact .item-number{padding-top:3px}.bbss-impact .category{margin:0 0 10px}.bbss-impact h2{font-size:1.4rem;margin-bottom:12px}
+.bbss-closing{color:var(--ink);font-size:1.125rem;border-top:1px solid var(--line);padding-top:28px;margin-top:32px;max-width:780px}
+.bbss-page .reading-next{padding-bottom:36px;gap:28px}.bbss-page .project-context>a{font-size:.875rem}
+@media(max-width:1000px){.bbss-preview-layout{grid-template-columns:1fr;gap:32px}.bbss-case-step{grid-template-columns:1fr;gap:12px}.bbss-preview-summary{max-width:600px}}
+@media(max-width:767px){.bbss-preview{margin-top:40px;padding-top:36px}.bbss-work-grid{grid-template-columns:1fr}.bbss-work-grid article{padding-bottom:28px}.bbss-page .detail-hero{padding-top:32px}.bbss-status{flex-direction:column;gap:8px}.bbss-flow,.bbss-process{grid-template-columns:repeat(2,minmax(0,1fr))}.bbss-rule{padding:20px}.bbss-impact h2{font-size:1.25rem}.bbss-impact li{grid-template-columns:24px minmax(0,1fr);gap:12px}.bbss-human-flow{gap:10px}.bbss-page .reading-next{gap:4px}.bbss-page .project-context{margin-bottom:24px}}

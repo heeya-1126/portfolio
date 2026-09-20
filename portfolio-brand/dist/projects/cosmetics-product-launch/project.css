@@ -1,0 +1,17 @@
+.cosmetics-project,#featured-project{--accent:#245c5c}
+.cosmetics-project .category,#featured-project .category,#featured-project .asset-label{color:var(--accent)}
+.cosmetics-project .detail-section,.cosmetics-project .detail-hero,.cosmetics-project .case-step,.cosmetics-project .case-tabs,.cosmetics-project .impact-notes,#featured-project{border-color:#245c5c}
+.cosmetics-project .product-photo,#featured-project .product-photo{aspect-ratio:4/3;object-fit:contain;background:transparent}
+.cosmetics-project .product-image-frame{aspect-ratio:4/3;background:transparent}
+.cosmetics-project .work-link{display:flex;flex-direction:column;align-items:flex-start}
+.cosmetics-project .work-link .product-image-frame{width:100%}
+.cosmetics-project .work-link>p{margin-bottom:18px}
+.cosmetics-project .case-shortcut{margin-top:auto}
+.cosmetics-project .case-action-image{display:block;width:100%;max-width:720px;height:auto;margin:24px 0 30px}
+.cosmetics-project .case-step>div{min-width:0}
+.cosmetics-project .case-step>div>p+p{margin-top:18px}
+.cosmetics-project .funding-evidence{margin:28px 0 0;max-width:560px;border-top:1px solid var(--accent);padding-top:20px}
+.cosmetics-project .funding-evidence img{display:block;width:100%;height:auto}
+.cosmetics-project .funding-evidence figcaption{font-size:.875rem;line-height:1.7;color:var(--secondary);margin-top:16px}
+#featured-project .product-preview .product-kind{margin-top:8px}
+@media(max-width:767px){.cosmetics-project .case-tabs{gap:20px}.cosmetics-project .case-tabs button{font-size:.875rem}.cosmetics-project .work-link .case-shortcut{margin-top:0}}
